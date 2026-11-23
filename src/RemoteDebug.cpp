@@ -10,6 +10,7 @@
  *
  * Versions:
  *  ------	----------	-----------------
+ *  3.1.0	2026-11-23  Fix WebSocketsClient compilation on ESP8266 Arduino core 3.x
  *  3.0.5	2019-03-32  Ajustment on debugA macro, thanks @jetpax and @cmidgley to add this issue
  *  3.0.4	2019-03-19  All public configurations (#defines) have moved to RemoteDebugCfg.h, to facilitate changes for anybody.
  * 						Changed examples with warnings on change any #define in project,
@@ -90,7 +91,7 @@
 
 ///// Defines
 
-#define VERSION "3.0.5"
+#define VERSION "3.1.0"
 
 ///// Includes
 
