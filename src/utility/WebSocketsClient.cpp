@@ -142,6 +142,17 @@ void WebSocketsClient::loop(void) {
                 _client.tcp = NULL;
             }
             _client.ssl = new WiFiClientSecure();
+#if (WEBSOCKETS_NETWORK_TYPE == NETWORK_ESP8266)
+            // ESP8266 core >= 3.x replaced WiFiClientSecure::verify() with
+            // setFingerprint(), which must be applied BEFORE connect(). On
+            // older cores the fingerprint is verified post-connect in
+            // connectedCb() instead, so only set it here on new cores.
+#if (ARDUINO_ESP8266_MAJOR >= 3)
+            if(_fingerprint.length()) {
+                _client.ssl->setFingerprint(_fingerprint.c_str());
+            }
+#endif
+#endif
             _client.tcp = _client.ssl;
         } else {
             DEBUG_WEBSOCKETS("[WS-Client] connect ws...\n");
@@ -700,6 +711,9 @@ void WebSocketsClient::connectedCb() {
 #if (WEBSOCKETS_NETWORK_TYPE == NETWORK_ESP8266)
     _client.tcp->setNoDelay(true);
 
+    // On ESP8266 core < 3.x the fingerprint is validated here after leading in to
+    // the handshake via the now-removed WiFiClientSecure::verify().
+#if (WEBSOCKETS_NETWORK_TYPE == NETWORK_ESP8266) && (ARDUINO_ESP8266_MAJOR < 3)
     if(_client.isSSL && _fingerprint.length()) {
         if(!_client.ssl->verify(_fingerprint.c_str(), _host.c_str())) {
             DEBUG_WEBSOCKETS("[WS-Client] certificate mismatch\n");
@@ -707,6 +721,11 @@ void WebSocketsClient::connectedCb() {
             return;
         }
     }
+#else
+    // ESP8266 core >= 3.x removed verify(); the fingerprint is instead applied
+    // via WiFiClientSecure::setFingerprint() in loop() before connect().
+    (void)_host;
+#endif
 #endif
 
     // send Header to Server
