@@ -6,14 +6,12 @@ with Print commands like Serial Monitor.
 ![logo](extras/readme_media/logo.png)
 
 [![arduino-library-badge](https://www.ardu-badge.com/badge/RemoteDebug.svg?)](https://www.ardu-badge.com/RemoteDebug)
-[![GitHub release](https://img.shields.io/github/release/JoaoLopesF/RemoteDebug.svg)](#releases)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3eadfd19246f4808907cf53599a6b9f0)](https://www.codacy.com/app/JoaoLopesF/RemoteDebug?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JoaoLopesF/RemoteDebug&amp;utm_campaign=Badge_Grade)
-[![platform badge](https://img.shields.io/badge/platform-Arduino|Espressif-orange.svg)](https://github.com/arduino)
-[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/JoaoLopesF/RemoteDebug/blob/master/LICENSE.txt)  
+[![GitHub release](https://img.shields.io/github/release/Rolandwalraven/RemoteDebug.svg)](#releases)
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Rolandwalraven/RemoteDebug/blob/master/LICENSE.txt)  
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](#github)
-[![GitHub issues](https://img.shields.io/github/issues/JoaoLopesF/RemoteDebug.svg)](http://github.com/JoaoLopesF/RemoteDebug/issues)
-[![star this repo](http://githubbadges.com/star.svg?user=JoaoLopesF&repo=RemoteDebug)](http://github.com/JoaoLopesF/RemoteDebug)
-<!-- ![build badge](https://img.shields.io/github/stars/JoaoLopesF/RemoteDebug.svg?style=social) -->
+[![GitHub issues](https://img.shields.io/github/issues/Rolandwalraven/RemoteDebug.svg)](http://github.com/Rolandwalraven/RemoteDebug/issues)
+[![star this repo](http://githubbadges.com/star.svg?user=Rolandwalraven&repo=RemoteDebug)](http://github.com/Rolandwalraven/RemoteDebug)
+<!-- ![build badge](https://img.shields.io/github/stars/Rolandwalraven/RemoteDebug.svg?style=social) -->
 
 ![remotedebugapp](extras/readme_media/remotedebugapp.png)
 
